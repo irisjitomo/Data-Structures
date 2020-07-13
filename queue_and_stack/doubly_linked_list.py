@@ -52,7 +52,7 @@ class DoublyLinkedList:
     as the new head of the list. Don't forget to handle 
     the old head node's previous pointer accordingly."""
     def add_to_head(self, value):
-        mew_mode = ListNode(value, None, None)
+        new_node = ListNode(value, None, None)
         self.length += 1
         if not self.head and not self.tail:
             self.head = new_node
@@ -68,14 +68,13 @@ class DoublyLinkedList:
     def remove_from_head(self):
         value = self.head.value
         self.delete(self.head)
-        self.length -= 1
         return value
 
     """Wraps the given value in a ListNode and inserts it 
     as the new tail of the list. Don't forget to handle 
     the old tail node's next pointer accordingly."""
     def add_to_tail(self, value):
-        new_mode = ListNode(value, None, None)
+        new_node = ListNode(value, None, None)
         self.length += 1
         if not self.head and not self.tail:
             self.head = self.tail = new_node
@@ -90,7 +89,6 @@ class DoublyLinkedList:
     def remove_from_tail(self):
         value = self.tail.value
         self.delete(self.tail)
-        self.length -= 1
         return value
 
     """Removes the input node from its current spot in the 
